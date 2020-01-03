@@ -25,9 +25,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '#(cmn3bt(-(uy&cf+46iyb(##8id!e-6pr5^y%(6=m51*fa80_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["0.0.0.0:5000", "https://pereslav.herokuapp.com"]
+ALLOWED_HOSTS = ["0.0.0.0:5000", "https://pereslav.herokuapp.com", "*"]
+
+SECURE_SSL_REDIRECT = True
+# CSRF_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True
 
 # Application definition
 
