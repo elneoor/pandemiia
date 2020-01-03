@@ -29,7 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["0.0.0.0:5000", "https://pereslav.herokuapp.com", "*"]
 
-SECURE_SSL_REDIRECT = True
+# SECURE_SSL_REDIRECT = False
 # CSRF_COOKIE_SECURE = True
 # SESSION_COOKIE_SECURE = True
 
