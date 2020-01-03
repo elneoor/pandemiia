@@ -14,5 +14,4 @@ django-tables2 = "2.2.1"
 
 [requires]
 
-python_version = "3.7.4"
-pip_version = "9.0.1"
+python_version = "3.7.3"
