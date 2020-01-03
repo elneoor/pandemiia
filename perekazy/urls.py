@@ -19,6 +19,6 @@ from comparison.views import index as comparison_index
 
 urlpatterns = [
     path('comparison/', include('comparison.urls')),
-    path('', comparison_index, name='comparison.index'),
+    path(r'^', include ('comparison.urls')),
     path('admin/', admin.site.urls),
 ]
