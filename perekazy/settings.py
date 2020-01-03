@@ -27,8 +27,7 @@ SECRET_KEY = '#(cmn3bt(-(uy&cf+46iyb(##8id!e-6pr5^y%(6=m51*fa80_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ["0.0.0.0:5000", "https://pereslav.herokuapp.com"]
 
 # Application definition
 
