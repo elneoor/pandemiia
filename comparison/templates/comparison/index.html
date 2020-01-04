@@ -17,14 +17,15 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
 
     <!-- Bootstrap CSS File -->
-    <link href="{% static 'comparison/lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
     <!-- Libraries CSS Files -->
-    <link href="{% static 'comparison/lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
-    <link href="{% static 'comparison/lib/animate/animate.min.css' %}" rel="stylesheet">
-    <link href="{% static 'comparison/lib/ionicons/css/ionicons.min.css' %}" rel="stylesheet">
-    <link href="{% static 'comparison/lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
-    <link href="{% static 'comparison/lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/ionicons/css/ionicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/dataTables/dataTables.bootstrap4.min.css' %}" rel="stylesheet">
 
     <!-- Main Stylesheet File -->
     <link href="{% static 'comparison/css/style.css' %}" rel="stylesheet">
@@ -124,7 +125,7 @@
                 </header>
 
                 <div class="table-responsive-lg">
-                    <table class="table table-hover">
+                    <table id="comparison_table" class="table table-striped table-bordere">
                         <thead class="thead-dark">
                             <tr>
                                 <th>Платіжна система</th>
@@ -149,7 +150,7 @@
                             <tr>
                                 <td>Monobank SEPA</td>
                                 <td>1-2 дні</td>
-                                <td>3,99 EUR</td>
+                                <td>0,00 EUR</td>
                                 <td>995,00 EUR + 131 UAH</td>
                             </tr>
                             <tr>
@@ -320,22 +321,34 @@
     <!-- <div id="preloader"></div> -->
 
     <!-- JavaScript Libraries -->
-    <script src="{% static 'comparison/lib/jquery/jquery.min.js' %}"></script>
-    <script src="{% static 'comparison/lib/jquery/jquery-migrate.min.js' %}"></script>
-    <script src="{% static 'comparison/lib/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-    <script src="{% static 'comparison/lib/easing/easing.min.js' %}"></script>
-    <script src="{% static 'comparison/lib/mobile-nav/mobile-nav.js' %}"></script>
-    <script src="{% static 'comparison/lib/wow/wow.min.js' %}"></script>
-    <script src="{% static 'comparison/lib/waypoints/waypoints.min.js' %}"></script>
-    <script src="{% static 'comparison/lib/counterup/counterup.min.js' %}"></script>
-    <script src="{% static 'comparison/lib/owlcarousel/owl.carousel.min.js' %}"></script>
-    <script src="{% static 'comparison/lib/isotope/isotope.pkgd.min.js' %}"></script>
-    <script src="{% static 'comparison/lib/lightbox/js/lightbox.min.js' %}"></script>
+    <script src="{% static 'lib/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'lib/jquery/jquery-migrate.min.js' %}"></script>
+    <script src="{% static 'lib/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/mobile-nav/mobile-nav.js' %}"></script>
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'lib/isotope/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
+    <script src="{% static 'lib/dataTables/dataTables.bootstrap4.min.js' %}"></script>
+
     <!-- Contact Form JavaScript File -->
     <!-- <script src="contactform/contactform.js"></script> -->
 
     <!-- Template Main Javascript File -->
     <script src="{% static 'comparison/js/main.js' %}"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#comparison_table').DataTable({
+                "order": [
+                    [2, "asc"]
+                ]
+            });
+        });
+    </script>
 
 </body>
 
