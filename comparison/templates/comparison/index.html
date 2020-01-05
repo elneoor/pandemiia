@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html prefix="og: http://ogp.me/ns#" lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -8,6 +8,13 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
+
+    <!-- Facebook Open Graph config -->
+    <meta property="og:title" content="Моніторинг тарифів систем переказу грошей" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://pereslav.herokuapp.com/" />
+    <meta property="og:image" content="comparison/img/apple-touch-icon.png" />
+    <meta property="og:locale" content="ua_UA" />
 
     <!-- Favicons -->
     <link href="{% static 'comparison/img/favicon.ico' %}" rel="icon">
@@ -300,7 +307,7 @@
                     <div class="col-sm-6">
                         <div class="footer-newsletter">
                             <h4>Слідкуйте за оновленнями</h4>
-                            <p>Не пропустити найгарячіші новини та унікальні поради по міжнародних переказах</p>
+                            <p>Не пропустіть найгарячіші новини та унікальні поради по міжнародних переказах</p>
                             <form action="" method="post">
                                 {% csrf_token %}
                                 <input type="email" name="email"><input type="submit" value="Підписатися">
