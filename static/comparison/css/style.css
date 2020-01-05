@@ -1186,6 +1186,7 @@ h6 {
 #faq {
     padding: 60px 0;
     overflow: hidden;
+    background: #f5f8fd;
 }
 
 #faq #faq-list {
