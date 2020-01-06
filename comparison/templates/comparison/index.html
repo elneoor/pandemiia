@@ -51,6 +51,25 @@
 
         gtag('config', 'UA-155338230-1');
     </script>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5BVG73N');
+    </script>
+    <!-- End Google Tag Manager -->
+
 
 
     <!-- =======================================================
@@ -62,6 +81,12 @@
 </head>
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BVG73N"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
     <!--==========================
   Header
   ============================-->
@@ -149,7 +174,7 @@
 
                 <div class="table-responsive-md">
                     <table id="comparison_table" class="table table-bordered">
-                        <thead class="thead-dark">
+                        <thead class="thead-light" style="background: #bbbbbb">
                             <tr>
                                 <th>Платіжна система</th>
                                 <th>Очікувана швидкість</th>
@@ -167,33 +192,33 @@
                             <tr>
                                 <td>TransferGo*</td>
                                 <td>до 19:30 наступного дня</td>
-                                <td>0,00 EUR</td>
-                                <td>1000,00 EUR<br/><a class="btn-get-started" href="https://transfergo.com">Перейти на сайт</a></td>
+                                <td>0.00 EUR</td>
+                                <td>1000.00 EUR<br/><a class="btn-get-started" href="https://transfergo.com">Перейти на сайт</a></td>
                             </tr>
                             <tr>
                                 <td>TransferWise*</td>
                                 <!-- <td>На єврову карту ПриватБанку</td> -->
                                 <td>Миттєво</td>
-                                <td>0,63 EUR</td>
-                                <td>999,37 EUR<br/><a class="btn-get-started" href="https://transferwise.com">Перейти на сайт</a></td>
+                                <td>0.63 EUR</td>
+                                <td>999.37 EUR<br/><a class="btn-get-started" href="https://transferwise.com">Перейти на сайт</a></td>
                             </tr>
                             <tr>
                                 <td>Monobank SEPA</td>
                                 <td>1-2 дні</td>
-                                <td>0,00 EUR</td>
-                                <td>995,00 EUR + 131 UAH</td>
+                                <td>0.00 EUR</td>
+                                <td>995.00 EUR + 131 UAH</td>
                             </tr>
                             <tr>
                                 <td>MoneyGram</td>
                                 <td>Миттєво</td>
-                                <td>3,99 EUR</td>
-                                <td>996,01 EUR<br/><a class="btn-get-started" href="http://global.moneygram.com/">Перейти на сайт</a></td>
+                                <td>3.99 EUR</td>
+                                <td>996.01 EUR<br/><a class="btn-get-started" href="http://global.moneygram.com/">Перейти на сайт</a></td>
                             </tr>
                             <tr>
                                 <td>Western Union</td>
                                 <td>Миттєво</td>
-                                <td>4,99 EUR</td>
-                                <td>995,01 EUR<br/><a class="btn-get-started" href="https://www.westernunion.com/de/en/web/send-money/start">Перейти на сайт</a></td>
+                                <td>4.99 EUR</td>
+                                <td>995.01 EUR<br/><a class="btn-get-started" href="https://www.westernunion.com/de/en/web/send-money/start">Перейти на сайт</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -353,6 +378,8 @@
     <script src="{% static 'lib/isotope/isotope.pkgd.min.js' %}"></script>
     <script src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
     <script src="{% static 'lib/dataTables/dataTables.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'lib/dataTables/jquery.dataTables.min.js' %}"></script>
+
 
     <!-- Contact Form JavaScript File -->
     <!-- <script src="contactform/contactform.js"></script> -->
@@ -363,9 +390,27 @@
     <script>
         $(document).ready(function() {
             $('#comparison_table').DataTable({
+                "paging": false,
+                // "ordering": false,
+                "info": false,
+                "searching": false,
                 "order": [
-                    [2, "asc"]
-                ]
+                    [2, "asc"],
+                    [1, "desc"]
+                ],
+                // "order": [
+                //     [1, "desc"],
+                //     [2, "asc"]
+                // ],
+                "columns": [{
+                    "orderable": false
+                }, {
+                    "orderable": false
+                }, {
+                    "orderable": true
+                }, {
+                    "orderable": false
+                }]
             });
         });
     </script>
